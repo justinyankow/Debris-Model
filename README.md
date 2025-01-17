@@ -10,3 +10,6 @@ GOALS:
 - Explore different types of codes for model (Python, C++, ...)
 - Maximize efficiency of code as it is computationally expensive
 - Implement other external factors such as thermal sensitivity into model
+
+TASKS: 
+- Include a new function that creates a debris field using the CSV's numerical density model
