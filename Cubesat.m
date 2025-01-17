@@ -27,7 +27,7 @@ classdef Cubesat
             % Vector from cubesat to debris
             rel_position = debris.position - obj.position;
             distance = norm(rel_position);
-            
+
             % Check if within range
             if distance > obj.range
                 detected = false;
@@ -37,10 +37,9 @@ classdef Cubesat
             % Calculate angle between sensor direction and debris position
             sensor_direction = obj.velocity / norm(obj.velocity); % Assume forward looking
             rel_position_norm = rel_position / distance;
-            angle = acos(dot(sensor_direction, rel_position_norm)) * (180/pi); % Convert to degrees
-            
+            angle_dot = dot(sensor_direction, rel_position_norm);            
             % Check if within field of view
-            detected = angle <= obj.fov / 2;
+            detected = angle_dot > cosd(obj.fov / 2);
         end
     end
 end

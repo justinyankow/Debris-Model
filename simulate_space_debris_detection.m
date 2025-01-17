@@ -1,4 +1,3 @@
-
 function simulate_space_debris_detection()
     % Simulation parameters
     dt = 1;             % Time step (seconds)
