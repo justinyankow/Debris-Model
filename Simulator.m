@@ -14,7 +14,7 @@ classdef Simulator
         % Constructor
         function this = Simulator()
             fprintf("Init Simulator...\n")
-            this.num_debris = 1000000;
+            this.num_debris = 100000;
             this.mu = 398600.4418;
             this.timestep = 10;
             this.duration = 60;
@@ -44,6 +44,7 @@ classdef Simulator
                         fprintf("Debris %d\n", i)
                     end
                     this.debris(i) = this.debris(i).apply_orbital_dynamics(this.timestep, this.mu);
+                    %this.debris(i) = Update(this.debris(i), this.timestep, this.mu);
                 end
                 fprintf("Updated Debris\n")
                 % Update cubesat position
